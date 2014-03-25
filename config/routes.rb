@@ -5,9 +5,11 @@ ToDoList::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'tasks#index'
   
-  resources :tasks do
-    get 'index'
-  end
+  resources :tasks
+  
+  get 'active_tasks' => 'tasks#active'
+  get 'completed_tasks' => 'tasks#completed'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
