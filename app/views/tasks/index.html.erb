@@ -2,12 +2,13 @@
 <div>
 	<% @tasks.each do |task| %>
 		<%= task.done? %>
-		<%= task.description %><br/>
+		<%= task.description %>
+		<%= link_to 'X', task, method: :delete %><br/>
 	<% end %>
 </div>
+
 <div>
 	<%= link_to('+', new_task_url) %>
 	<%= link_to('active', active_tasks_url) %>
 	<%= link_to('completed', completed_tasks_url) %>
-	
 </div>
