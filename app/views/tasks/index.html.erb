@@ -1,0 +1,7 @@
+<h1>Tasks</h1>
+<div>
+	<% @tasks.each do |task| %>
+		<%= task.done? %>
+		<%= task.description %>
+	<% end %>
+</div>
