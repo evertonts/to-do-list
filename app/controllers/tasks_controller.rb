@@ -5,12 +5,12 @@ class TasksController < ApplicationController
   end
   
   def active
-    @tasks = Task.where('done', false)
+    @tasks = Task.where(:done => false)
     render 'index'
   end
   
   def completed
-    @tasks = Task.where('done', true)
+    @tasks = Task.where(:done => true)
     render 'index'
   end
   
@@ -35,9 +35,15 @@ class TasksController < ApplicationController
     redirect_to tasks_url
   end
   
+  def toggle_done
+    @task = Task.find(params[:id])
+    @task.update(:done => !@task.done?)
+    redirect_to tasks_url
+  end
+  
   private 
   
   def task_params
-    params.require(:task).permit(:decription)
+    params.require(:task).permit(:description)
   end
 end

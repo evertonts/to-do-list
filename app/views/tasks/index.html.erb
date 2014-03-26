@@ -1,14 +1,31 @@
 <h1>Tasks</h1>
 <div>
-	<% @tasks.each do |task| %>
-		<%= task.done? %>
-		<%= task.description %>
-		<%= link_to 'X', task, method: :delete %><br/>
-	<% end %>
+	<table class="tasks-table">
+		
+		<thead>
+			What need to be done?
+		<thead>
+			
+		<tbody>
+			<% @tasks.each do |task| %>
+				<tr>
+					<td><%= link_to (task.done? ? 'undo' : 'do'), toggle_done_task_path(:id => task.id) %></td>
+					<td class='left'><%= task.description %></td>
+					<td><%= link_to 'X', task, method: :delete %></td>
+				</tr>
+			<% end %>
+		</tbody>
+		
+		<tfoot>
+			
+		</tfoot>
+		
+	</table>
 </div>
 
 <div>
 	<%= link_to('+', new_task_url) %>
+	<%= link_to 'all', tasks_url%>
 	<%= link_to('active', active_tasks_url) %>
 	<%= link_to('completed', completed_tasks_url) %>
 </div>

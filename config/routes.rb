@@ -9,6 +9,7 @@ ToDoList::Application.routes.draw do
   
   get 'active_tasks' => 'tasks#active'
   get 'completed_tasks' => 'tasks#completed'
+  get 'toggle_done_task' => 'tasks#toggle_done'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
