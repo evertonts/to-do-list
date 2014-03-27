@@ -24,7 +24,6 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_url
     else
-      flash['error'] = 'Falha ao salvar'
       render 'new'
     end
   end
