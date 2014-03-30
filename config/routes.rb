@@ -3,13 +3,18 @@ ToDoList::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'tasks#index'
+  root 'tasks#home'
+    
+  scope "api" do
+    resources :tasks
+    
+    get 'home' => 'tasks#home'
+    get 'active_tasks' => 'tasks#active'
+    get 'completed_tasks' => 'tasks#completed'
+  end
   
-  resources :tasks
-  
-  get 'active_tasks' => 'tasks#active'
-  get 'completed_tasks' => 'tasks#completed'
-  post 'toggle_done_task' => 'tasks#toggle_done'
+
+  #post 'toggle_done_task' => 'tasks#toggle_done'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
