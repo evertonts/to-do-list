@@ -7,6 +7,7 @@ class ToDoList.Views.TasksIndex extends Backbone.View
   initialize: ->
     @collection.on('reset', @render, this)
     @collection.on('add', @appendTask, this)
+    @collection.on('remove', @render, this)
     
   render: ->
     $(@el).html(@template())
@@ -30,3 +31,5 @@ class ToDoList.Views.TasksIndex extends Backbone.View
       errors  = $.parseJSON(response.responseText).errors
       for attribute, messages of errors
         $('.error').html "<li> #{attribute} #{message} </li>" for message in messages
+        
+  

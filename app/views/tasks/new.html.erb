@@ -2,11 +2,7 @@
 
 <%= form_for @task do |f| %>
 
-	<div class="error">
-		<% @task.errors.full_messages.each do |msg| %>
-  		<li><%= msg %></li>
-  	<% end %>
-	</div>
+
 		
 	<div>
 		<%= f.label :description %>

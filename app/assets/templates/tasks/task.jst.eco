@@ -1,1 +1,6 @@
+<input type="checkbox" name="done" >
+
 <%= @task.get('description')%>
+
+<a class="delete" href="javascript:void(0)">delete</a>
+
