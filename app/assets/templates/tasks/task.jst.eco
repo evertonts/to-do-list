@@ -1,4 +1,6 @@
-<input type="checkbox" name="done" >
+<input type='checkbox' <%= if @task.get('done') then "checked"%> />
+
+<%= @task.get('done')%>
 
 <%= @task.get('description')%>
 

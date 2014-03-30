@@ -3,7 +3,7 @@ class ToDoList.Views.Task extends Backbone.View
   tagName: 'li'
   
   events:
-    'change input' : 'toggleDone'
+    'change [type=checkbox]' : 'toggleDone'
     'click .delete' : 'deleteTask'
   
   render: ->
@@ -11,7 +11,6 @@ class ToDoList.Views.Task extends Backbone.View
     this
     
   toggleDone: (event) ->
-    console.log(this.model.get('description'))
     task = this.model
     task.set('done', !task.get('done'))
     task.save()
