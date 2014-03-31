@@ -6,8 +6,10 @@ class TaskTest < ActiveSupport::TestCase
     assert !task.done?
   end
   
-  test "Should not save a task without a description" do
+  test "Should not save a task with a description shorter than 2 characters" do
     task = Task.new
+    assert !task.save
+    task.description = "a"
     assert !task.save
   end
 end

@@ -19,7 +19,9 @@ class ToDoList.Views.TasksIndex extends Backbone.View
     attributes = description: $('#new_task_description').val()
     @collection.create attributes,
       wait: true
-      success: -> $('#new_task')[0].reset()
+      success: -> 
+        $('#new_task')[0].reset()
+        $('.error').html("")
       error: @handleError
     
   appendTask: (task) ->
