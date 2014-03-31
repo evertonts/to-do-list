@@ -1,6 +1,6 @@
 class ToDoList.Views.Task extends Backbone.View
   template: JST['tasks/task']
-  tagName: 'li'
+  className: 'row'
   
   events:
     'change [type=checkbox]' : 'toggleDone'

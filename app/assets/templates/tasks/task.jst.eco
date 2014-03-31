@@ -1,8 +1,17 @@
-<input type='checkbox' <%= if @task.get('done') then "checked"%> />
+<div class="col-md-3"/>
 
-<%= @task.get('done')%>
+<div class="col-md-1">
+  <input type='checkbox' <%= if @task.get('done') then "checked"%> />
+</div>
 
-<%= @task.get('description')%>
+<div class="col-md-4 left">
+  <%= @task.get('description')%>
+</div>
 
-<a class="delete" href="javascript:void(0)">delete</a>
+<div class="col-md-1">
+  <a class="delete glyphicon glyphicon-trash" href="javascript:void(0)"></a>
+</div>
 
+<div class="col-md-3"/>
+
+<hr/>

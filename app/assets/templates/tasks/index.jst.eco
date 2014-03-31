@@ -5,12 +5,13 @@
 </div>
   
 <form id="new_task">
-  <input type="text" name="description" id="new_task_description">
-  <input type="submit" value="Add">
+  <div class="row">
+    <input type="text" name="description" id="new_task_description" size="50">
+    <input type="submit" value="Add" class="btn ">
+  </div>
 </form>
   
 <h4>What need to be done?</h4>
 
-<ul>
-  <div id="tasks"></div>
-</ul>
+<div id="tasks"></div>
+

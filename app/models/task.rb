@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
   validates_length_of :description, :minimum => 2, :allow_blank => false
-  validate :validate_max_number_of_tasks
+  validate :validate_max_number_of_tasks, on: :create
   
   def validate_max_number_of_tasks
     if Task.all.size >= 5 
